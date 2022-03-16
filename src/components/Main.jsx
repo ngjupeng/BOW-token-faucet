@@ -44,17 +44,6 @@ export default function Main() {
         Get free BOW token
       </h2>
       <div className="mt-5">
-        <div>
-          <div className="text-2xl my-1">Address</div>
-          <div className="bg-input p-[2px] rounded overflow-hidden">
-            <input
-              ref={addressRef}
-              placeholder="Receive token address..."
-              type="text"
-              className="w-full rounded h-14 outline-none px-3 text-black text-2xl"
-            />
-          </div>
-        </div>
         <div className="mt-2">
           <div className="text-2xl my-1">
             Amount (Not require to add 18 decimals)
