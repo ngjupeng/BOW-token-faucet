@@ -62,7 +62,7 @@ export default function Main() {
           <div className="text-2xl my-1">
             Amount (Not require to add 18 decimals)
           </div>
-          <div className="bg-input pr-[1px] p-[2px] rounded overflow-hidden">
+          <div className="bg-input p-[2px] rounded overflow-hidden">
             <input
               ref={amountRef}
               placeholder="Receive token address..."
