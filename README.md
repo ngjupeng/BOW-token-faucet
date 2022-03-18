@@ -6,7 +6,6 @@ Link to bow token faucet: https://bow-token-faucet.vercel.app/
 
 Skills:
 - [x] React
-- [x] Hardhat
-- [x] Solidity
+- [x] Tailwindcss
 - [x] Ethers.js
-
+- [x] Vite
