@@ -7,7 +7,21 @@ export const FaucetContext = createContext();
 export const FaucetContextProvider = ({ children }) => {
   const [account, setAccount] = useState();
   const [networkId, setNetworkId] = useState();
-  const provider = new ethers.providers.Web3Provider(window.ethereum);
+  const [isSupportMetaMask, setIsSupportMetaMask] = useState(false);
+  let provider;
+  if (window.ethereum) {
+    provider = new ethers.providers.Web3Provider(window.ethereum);
+  } else {
+    provider = undefined;
+  }
+  const loadWeb3 = async () => {
+    if (window.ethereum) {
+      provider = new ethers.providers.Web3Provider(window.ethereum);
+      setIsSupportMetaMask(true);
+    } else {
+      setIsSupportMetaMask(false);
+    }
+  };
   const requestAccount = async () => {
     const accounts = await window.ethereum.request({
       method: "eth_requestAccounts",
@@ -22,8 +36,7 @@ export const FaucetContextProvider = ({ children }) => {
     );
     return tokenContract;
   };
-
-  useEffect(async () => {
+  const handleStartup = async () => {
     const acc = await provider.listAccounts();
     if (acc) {
       setAccount(acc[0]);
@@ -42,6 +55,10 @@ export const FaucetContextProvider = ({ children }) => {
         setAccount([]);
       }
     });
+  };
+  useEffect(async () => {
+    await loadWeb3();
+    await handleStartup();
   }, []);
   return (
     <FaucetContext.Provider
@@ -51,6 +68,7 @@ export const FaucetContextProvider = ({ children }) => {
         provider,
         networkId,
         getTokenContract,
+        isSupportMetaMask,
       }}
     >
       {children}
