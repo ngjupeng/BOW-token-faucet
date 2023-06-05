@@ -21,7 +21,7 @@ function App() {
     <div className="min-w-screen min-h-screen bg-main h-auto pb-10 md:pb-0">
       {isSupportMetaMask ? (
         networkId != undefined ? (
-          networkId == 4 ? (
+          networkId == 80001 ? (
             <div>
               {" "}
               <div>
@@ -61,7 +61,7 @@ function App() {
           ) : (
             <div className="translate-y-1/2">
               <div className="text-center flex items-center justify-center shadow-xl w-[90%] md:max-w-[450px] h-[200px] bg-[#191b1fc2] mx-auto rounded-xl p-4 text-white text-xl">
-                Sorry, our contract only run on rinkeby testnet, you have to
+                Sorry, our contract only run on mumbai testnet, you have to
                 switch your network to continue...
               </div>
             </div>

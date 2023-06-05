@@ -10,7 +10,7 @@ export default function Navigation() {
         <a
           rel="noopenner noreferrer"
           target="_blank"
-          href="https://rinkeby.etherscan.io/token/0x85d1b81281AEF63122D97b556682Cf9934200b7F"
+          href="https://mumbai.polygonscan.com/address/0x3d6aa51e581A6c1A020A38078699Db5935aC4C2a"
           className="hover:scale-125 transition duration-100 text-xl text-black font-medium select-none cursor-pointer "
         >
           Contract
@@ -26,7 +26,7 @@ export default function Navigation() {
           <a
             rel="noopenner noreferrer"
             target="_blank"
-            href={"https://rinkeby.etherscan.io/address/" + account}
+            href={"https://mumbai.polygonscan.com/address/" + account}
             className="hover:scale-125 transition mx-8 text-xl text-black font-medium select-none cursor-pointer"
           >
             {shortenAddress(account)}
